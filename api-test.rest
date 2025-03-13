@@ -1,0 +1,19 @@
+GET http://localhost:3002/api/persons
+
+###
+
+
+DELETE http://localhost:3002/api/persons/2
+
+
+
+###
+
+
+POST http://localhost:3002/api/persons
+Content-Type: application/json
+
+{
+ "name": "asdw",
+    "number": "12-1225"
+}
