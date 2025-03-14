@@ -4,6 +4,18 @@ const app = express();
 
 
 
+
+const path = require('path');
+
+// Servir el frontend desde el backend
+app.use(express.static(path.join(__dirname, 'dist')));
+
+// Manejar rutas desconocidas para que React controle la navegación
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+});
+
+
 console.log("Morgan middleware is active!");
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms'));
 
